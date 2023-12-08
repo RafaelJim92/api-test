@@ -1,3 +1,10 @@
+// Import Express
+const express = require('express');
+
+// Create an instance of Express
+const app = express();
+
+
 app.get("/", (req, res) => {
     res.send("Welcome to my Rafael's backend application");
 });
