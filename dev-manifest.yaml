@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: raf-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: raf-api
+  template:
+    metadata:
+      labels:
+        app: raf-api
+    spec:
+      containers:
+      - name: raf-api
+        image: us-docker.pkg.dev/scrum-team-7/raf-api/api-test:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          limits:
+            cpu: "0.5"
+            memory: "500Mi"
+          requests:
+            cpu: "0.25"
+            memory: "250Mi"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+            scheme: HTTP
+          failureThreshold: 1
+          periodSeconds: 10
+          timeoutSeconds: 10
+        startupProbe:
+          httpGet:
+            path: /
+            port: 3000
+            scheme: HTTP
+          failureThreshold: 30
+          periodSeconds: 10
+          timeoutSeconds: 10
