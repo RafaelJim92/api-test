@@ -50,11 +50,11 @@ jobs:
     - name: Build
       run: |
          docker build \
-      --file api-tests/Dockerfile \
-      --tag "us-docker.pkg.dev/${{ env.PROJECT_ID }}/raf-api/api-test:latest" \
-      --build-arg GITHUB_SHA="$GITHUB_SHA" \
-      --build-arg GITHUB_REF="$GITHUB_REF" \
-      api-tests
+          --file api-tests/Dockerfile \
+          --tag "us-docker.pkg.dev/${{ env.PROJECT_ID }}/raf-api/api-test:latest" \
+          --build-arg GITHUB_SHA="$GITHUB_SHA" \
+          --build-arg GITHUB_REF="$GITHUB_REF" \
+          api-tests
           
 
     # Push the Docker image to Google Container Registry
