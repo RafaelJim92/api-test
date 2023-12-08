@@ -48,7 +48,7 @@ jobs:
 
     # Build the Docker image
     - name: Build
-      run: |
+      run: |-
          docker build \
           --tag "us-docker.pkg.dev/${{ env.PROJECT_ID }}/raf-api/api-test:latest" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
