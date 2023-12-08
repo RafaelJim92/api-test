@@ -50,7 +50,7 @@ jobs:
     - name: Build
       run: |
          docker build \
-          --file api-tests/Dockerfile \
+          --file api-test/Dockerfile \
           --tag "us-docker.pkg.dev/${{ env.PROJECT_ID }}/raf-api/api-test:latest" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
