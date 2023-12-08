@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: raf-api
-        image: us-docker.pkg.dev/scrum-team-7/raf-api/api-test:latest
+        image: us-docker.pkg.dev/scrum-team-7/raf-api/api-tests:latest
         ports:
         - containerPort: 3000
         resources:
